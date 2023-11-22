@@ -1,0 +1,334 @@
+body {
+    background-color: beige;
+    color: #555555;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 25px;
+    line-height: 1.5;
+}
+
+
+.logo {
+    background: url("../images/Anubis-Logo.png");
+    background-size: contain;
+    height: 150px; 
+    background-repeat:no-repeat;
+    animation: moveBg 80s linear infinite;
+    animation-play-state: running;
+}
+
+@keyframes moveBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo { 
+        animation: none; 
+        background-position: 100% 0;
+    }
+    .gif {
+        display: none;
+    }
+}
+
+.place , .pet, .recipe {
+    margin-bottom: 50px;
+    border: 4px dashed #000080;
+    border-radius: 15px;
+
+}
+
+.place div , .pet div , .recipe div {
+    margin-top: 15px;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #4169E1;
+    text-align: center;
+    margin: 25px;
+}
+
+h2,h3 {
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #4169E1;
+    padding: 10px 10px;
+}
+
+nav {
+    border: 2px solid #555555;
+    width: 100%;
+    border-radius: 25px;
+    margin: 25px 0px;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+nav li {
+    padding: 4px 0px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #4169E1; 
+    color: #fff; 
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a.curr {
+    background-color: #4169E1;  
+    color: #fff; 
+    text-decoration: underline;
+}
+
+p , span {
+    line-height: 2;
+    margin-left: 25px;
+    padding: 5px 0px;
+}
+
+#skip {
+    position: absolute;
+    left: -500px;
+    text-transform: uppercase;
+}
+
+#skip:focus{
+    left:20px;
+    top: 50px;
+}
+
+.travel-photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.travel-photos figure {
+    flex: 0 0 calc(50% - 20px); 
+    text-align: center; 
+    margin: 10px; 
+}
+
+.travel-photos img {
+    max-width: 100%;
+    height: auto;
+}
+
+.travel-photos figcaption {
+    margin-top: 10px; 
+}
+
+.recipe ul {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
+.recipe ol {
+    list-style-type: decimal;
+    margin-left: 40px;
+}
+
+.recipe img {
+    display: block;
+    margin: 20px auto;
+}
+.pet ul {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+.pet img {
+    display: block;
+    margin: 0 auto;
+}
+.pet video {
+    display: block;
+    margin: 0 auto;
+}
+
+.places-nav {
+    display: none;
+}
+
+.recipe-nav {
+    display: none;
+}
+
+.pets-nav {
+    display: none;
+}
+
+
+@media screen and (min-width: 800px) {
+    #main {
+        display: grid;
+        grid-template-columns: repeat(2,1fr); /* Create a 2-column grid */
+        grid-gap: 10px; /* Adjust the gap between items as needed */
+    }
+    
+    .place {
+        border: 4px dashed #000080; /* Add the same border style for each place */
+        border-radius: 15px;
+        padding: 20px; /* Add padding for spacing between places */
+    }
+    
+    .place h2 {
+        text-align: center;
+    }
+    
+    .place h3 {
+        text-align: center;
+    }
+    
+    /* Styles for the travel photos grid within each place */
+    .travel-photos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Create a 2-column grid for photos */
+        grid-gap: 10px; /* Adjust the gap between photos as needed */
+    }
+    
+    /* Styles for each photo and caption in the grid */
+    .travel-photos figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    img.thumbnail {
+        max-width: 100%;
+    }
+
+    .places-nav {
+        display: block;
+    }
+
+    .places-nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .recipe-nav {
+        display: block;
+    }
+    .recipe-nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .pets-nav {
+        display: block;
+    }
+
+    .pets-nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .recipe span{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @keyframes changeColor {
+        0% { color: red; } 
+        25% { color: blue; } 
+        50% { color: green; } 
+        75% { color: orange; } 
+        100% { color: red; } 
+    }
+    h1 {
+        animation: changeColor 5s linear infinite; /* Change colors every 5 seconds, infinitely */
+    }
+    
+}
+
+
+@media screen and (min-width: 1200px) {
+    body {
+        font-family: "Trirong", serif;
+    }
+    .body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .first {
+        grid-column: 1;
+    }
+    .text {
+        grid-column: 2;
+    }
+    .place h3 {
+        text-align: center;
+    }
+    .travel-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    img {
+        border: 5px solid #656561; 
+        padding: 10px;
+        margin: 0px;
+        transition: 1s ease;
+    }
+    video {
+        border: 5px solid #656561; 
+        padding: 10px;
+        margin: 0px;
+        transition: 1s ease;
+    }
+    video:hover {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        transition: 1s ease;
+    }
+    img:hover {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        transition: 1s ease;
+    }
+    nav {
+        background-image: url(../images/background-image.jpeg);
+        color: black;
+    }
+    .recipe-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .pets-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    
+}
